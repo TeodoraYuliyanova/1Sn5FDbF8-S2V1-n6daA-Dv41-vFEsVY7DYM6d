@@ -1,0 +1,90 @@
+.register-p {
+    min-height: 100vh;
+    width: 100%;
+    background: url('../images/gas-station.jpg') center;
+    background-size: cover;
+    position: relative;
+}
+
+.register-p .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-right: 3%;
+    width: 800px;
+    height: 580px;
+    background-color: rgba(94, 104, 121, 0.288);
+    border: 2px solid #e6f1f7;
+    border-radius: 5px;
+}
+
+.register-p .firstAndLast {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.register-p .emailAndUsername {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.register-p .passAndConfirmPass {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.register-p .container h1 {
+    color: #fff;
+    margin-top: 60px;
+    margin-left: 50px;
+}
+
+.register-p .container input {
+    margin-left: 50px;
+    margin-top: 20px;
+    width: 320px;
+    height: 47px;
+    background-color: #ced0d1;
+    border-radius: 3px;
+    border: none;
+    font-size: 20px;
+    color: black;
+}
+
+.register-p .container input::placeholder {
+    font-size: 17px;
+    margin-left: 15px;
+    padding: 12px;
+}
+
+.register-p .container input[type=submit] {
+    width: 320px;
+    height: 45px;
+    background-color: rgb(94 104 121 / 86%);
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 40px;
+}
+
+.register-p .content {
+    position: absolute;
+    margin-top: 75px;
+    font-size: 14px;
+    margin-left: 55px;
+    text-align: center;
+
+}
+
+.register-p .content h2 {
+    color: rgb(6, 18, 48);
+    font-size: 1.8em;}
+
+.register-p .content a {
+    color: #fff;
+    text-decoration: none;
+}

@@ -1,0 +1,80 @@
+.login-p {
+    min-height: 100vh;
+    width: 100%;
+    background: url('../images/gas-station.jpg') center;
+    background-size: cover;
+    position: relative;
+}
+
+.login-p .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 440px;
+    height: 500px;
+    background-color: rgba(94, 104, 121, 0.288);
+    border: 2px solid #e6f1f7;
+    border-radius: 5px;
+}
+
+.login-p .container h1 {
+    color: #fff;
+    margin-top: 60px;
+    margin-left: 50px;
+}
+
+.login-p .container input {
+    margin-left: 50px;
+    margin-top: 20px;
+    width: 320px;
+    height: 47px;
+    background-color: #ced0d1;
+    border-radius: 3px;
+    border: none;
+    font-size: 20px;
+    color: black;
+}
+
+.login-p .container input::placeholder {
+    font-size: 17px;
+    margin-left: 15px;
+    padding: 12px;
+}
+
+.login-p .container input[type=submit] {
+    width: 320px;
+    height: 45px;
+    background-color: rgb(94 104 121 / 86%);
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 40px;
+}
+
+.login-p .container input[type=checkbox] {
+    width: 25px;
+    height: 18px;
+    border-radius: 5px;
+}
+
+.login-p .container label {
+    color: rgb(125, 119, 119);
+}
+
+.login-p .content {
+    position: absolute;
+    margin-top: 80px;
+    font-size: 13px;
+    margin-left: 45px;
+}
+
+.login-p .content h2 {
+    color: rgb(6, 18, 48);
+    font-size: 1.8em;
+}
+
+.login-p .content a {
+    color: #fff;
+    text-decoration: none;
+}

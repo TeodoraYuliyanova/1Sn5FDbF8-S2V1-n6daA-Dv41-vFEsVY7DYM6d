@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<div th:replace="fragments/head :: head"></div>
+
+<body class="register-p">
+
+
+<div class="container">
+    <h1>Sign Up</h1>
+
+    <form th:method="POST"
+          th:action="@{/users/register}"
+          th:object="${userRegisterFormDto}">
+
+        <div class="form">
+
+            <p th:if="${error}"
+               class="taken errors alert alert-danger">
+                Email or Username are already taken!
+            </p>
+
+            <div class="firstAndLast">
+
+                <div class="form-group col-md-6 mb-3">
+                    <label for="firstName" class="text-white font-weight-bold"></label>
+                    <input id="firstName"
+                           name="firstName"
+                           th:field="*{firstName}"
+                           type="text"
+                           min="4" max="20"
+                           placeholder="First Name"
+                           th:value="*{firstName}"/>
+
+                    <p th:if="${#fields.hasErrors('firstName')}"
+                       class="errors alert alert-bg-danger">
+                        First Name should be between 4 and 20 characters.
+                    </p>
+
+                </div>
+
+
+                <div class="form-group col-md-6 mb-3">
+                    <label for="lastName" class="text-white font-weight-bold"></label>
+                    <input id="lastName"
+                           name="lastName"
+                           th:field="*{lastName}"
+                           type="text"
+                           min="4" max="20"
+                           placeholder="Last Name"
+                           th:value="*{lastName}">
+
+                    <p th:if="${#fields.hasErrors('lastName')}"
+                       class="errors alert alert-bg-danger">
+                        Last Name should be between 4 and 20 characters.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+            <div class="emailAndUsername">
+
+                <div class="form-group col-md-6 mb-3">
+                    <label for="email" class="text-white font-weight-bold"></label>
+                    <input id="email"
+                           name="email"
+                           th:field="*{email}"
+                           type="email"
+                           min="5"
+                           max="20"
+                           placeholder="Email"
+                           th:value="*{email}">
+
+                    <p th:if="${#fields.hasErrors('email')}"
+                       class="errors alert alert-bg-danger">
+                        Email should be between 5 and 20 characters.
+                    </p>
+
+                </div>
+
+                <div class="form-group col-md-6 mb-3">
+                    <label for="username" class="text-white font-weight-bold"></label>
+                    <input id="username"
+                           name="username"
+                           th:field="*{username}"
+                           type="text"
+                           min="4" max="20"
+                           placeholder="Username"
+                           th:value="*{username}">
+
+                    <p th:if="${#fields.hasErrors('username')}"
+                       class="errors alert alert-bg-danger">
+                        Username should be between 4 and 20 characters.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+            <div class="passAndConfirmPass">
+
+                <div class="form-group col-md-6 mb-3">
+                    <label for="password" class="text-white font-weight-bold"></label>
+                    <input id="password"
+                           name="password"
+                           th:field="*{password}"
+                           type="password"
+                           placeholder="Password"
+                           th:value="*{password}">
+
+                    <p th:if="${#fields.hasErrors('password')}"
+                       class="errors alert alert-bg-danger">
+                        Password should be between 4 and 20 characters.
+                    </p>
+
+                </div>
+
+                <div class="form-group col-md-6 mb-3">
+                    <label for="confirmPassword" class="text-white font-weight-bold"></label>
+                    <input id="confirmPassword"
+                           name="confirmPassword"
+                           th:field="*{confirmPassword}"
+                           type="password"
+                           placeholder="Confirm Password"
+                           th:value="*{confirmPassword}">
+
+                    <p th:if="${#fields.hasErrors('confirmPassword')}"
+                       class="errors alert alert-bg-danger">
+                        Passwords does not match.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <input type="submit" value="Sign Up">
+        </div>
+
+        <div class="content">
+            <h2>Already have an account with Gas Stations? <a th:href="@{/users/login}">Sign in.</a></h2></br>
+
+        </div>
+
+
+    </form>
+
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<div th:replace="fragments/head :: head"></div>
+
+
+<body class="search-p">
+
+<div th:replace="fragments/header :: header"></div>
+
+<div class="format">
+
+    <div th:if="${errorMessage}" class="error-message">
+        <p th:text="${errorMessage}"></p>
+    </div>
+
+    <ul class="stations">
+        <li th:each="s : ${stations}">
+            <h3 class="name">Name: <span th:text="${s.name}"></span></h3>
+            <p class="info">Brand: <span th:text="${s.brand}"></span></p>
+            <p class="info">Street: <span th:text="${s.street}"></span></p>
+            <p class="info">Place: <span th:text="${s.place}"></span></p>
+            <p class="info">Lat: <span th:text="${s.lat}"></span></p>
+            <p class="info">Lng: <span th:text="${s.lng}"></span></p>
+            <p class="info">Dist: <span th:text="${s.dist}"></span></p>
+            <p class="info">Diesel: <span th:text="${s.diesel}"></span></p>
+            <p class="info">e5: <span th:text="${s.e5}"></span></p>
+            <p class="info">e10: <span th:text="${s.e10}"></span></p>
+            <p class="info">House number: <span  th:text="${s.houseNumber}"></span></p>
+            <p class="info">Postcode: <span  th:text="${s.postCode}"></span></p>
+        </li>
+    </ul>
+
+</div>
+
+
+</body>
+
+</html>

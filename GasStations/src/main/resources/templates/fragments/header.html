@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns="http://www.w3.org/1999/html">
+<header>
+    <nav class="main-nav">
+
+        <div class="nav-links">
+
+            <ul>
+
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                <th:block sec:authorize="!isAuthenticated()">
+                    <li>
+                        <a th:href="@{/users/login}">Login</a>
+                    </li>
+
+                    <li>
+                        <a th:href="@{/users/register}">Register</a>
+                    </li>
+
+                </th:block>
+
+
+                <th:block sec:authorize="isAuthenticated()">
+                    <li>
+                        <a th:href="@{/fuel-prices}">Fuel Prices</a>
+                    </li>
+
+                    <li>
+                        <a>
+                            <form th:action="@{/users/logout}"
+                                  th:method="POST">
+                                <button type="submit" class="logout-button">Logout</button>
+                            </form>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="search">
+                            <form th:action="@{/search}"
+                                  th:method="GET">
+                                <input class="search-placeholder" type="text" name="query" placeholder="Search">
+                                <!--<button class="submit" type="submit">Submit</button>-->
+                            </form>
+                        </a>
+                    </li>
+                </th:block>
+
+            </ul>
+        </div>
+
+    </nav>
+</header>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<div th:replace="fragments/head :: head"></div>
+
+<body class="fuel-prices">
+
+<div th:replace="fragments/header :: header"></div>
+
+<div class="form-container">
+    <h2>Fuel Price Statistics</h2>
+
+    <form class="fuel-form" th:action="@{/fuel-prices}" th:method="GET">
+        <label for="fuelType">Select</label>
+        <select id="fuelType" name="fuelType">
+            <option value="e5">e5</option>
+            <option value="e10">e10</option>
+            <option value="diesel">Diesel</option>
+        </select>
+        <button type="submit" class="statistics">Get Statistics</button>
+    </form>
+</div>
+
+<div class="container" th:if="${fuelPriceStatistics != null}">
+    <h3>Statistics for fuel</h3>
+    <p>Median Price: <span th:text="${fuelPriceStatistics.median}"></span></p>
+    <p>Max Price: <span th:text="${fuelPriceStatistics.max}"></span></p>
+    <p>Min Price: <span th:text="${fuelPriceStatistics.min}"></span></p>
+</div>
+
+
+</body>
+
+</html>
