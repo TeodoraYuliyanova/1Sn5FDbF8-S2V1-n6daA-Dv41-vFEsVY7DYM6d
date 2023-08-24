@@ -1,1 +1,1 @@
-# 1Sn5FDbF8-S2V1-n6daA-Dv41-vFEsVY7DYM6d
+Put your password for the DB in the yml file(i am using MySql), after that start the application. You need to register a user and log in with it, after that you will see the search and the fuel prices fields.
